@@ -1,14 +1,12 @@
-<h1>
-Articles
-</h1>
-<%@articles.each do |item| %>
 <div>
-  <h3>
-    <%=item.title%>
-  </h3>
-  <p>
-    <%= item.content %>
-  </p>
-  </div>
+<h2 class="text-xl font-bold underline mb-2">
+Articles
+</h2>
+<%=link_to "Add Article", new_article_path()%>
+<%@articles.each do |item| %>
+
+  <%= render "article",item:item%>
+  <%= link_to "Show", item%>
 <% end %>
+</div>
 

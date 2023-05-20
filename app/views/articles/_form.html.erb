@@ -1,0 +1,18 @@
+<%= form_with model:article do |form|%>
+<% if article.errors.any? %>
+    <h3>
+        <%= pluralize(article.errors.count ,"error")%>
+        Error, Couldn't Save Data
+    </h3>
+    <ul>
+        <%article.errors.each do |err|%>
+            <li><%= err.full_message %></li>
+        <% end %>
+    </ul>
+<%end%>
+    <%= form.label :title%>
+    <%= form.text_field :title%>
+    <%= form.label :content%>
+    <%= form.text_area :content%>
+    <%= form.submit%>
+<%end %>
