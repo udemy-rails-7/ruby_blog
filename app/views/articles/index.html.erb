@@ -1,0 +1,14 @@
+<h1>
+Articles
+</h1>
+<%@articles.each do |item| %>
+<div>
+  <h3>
+    <%=item.title%>
+  </h3>
+  <p>
+    <%= item.content %>
+  </p>
+  </div>
+<% end %>
+
